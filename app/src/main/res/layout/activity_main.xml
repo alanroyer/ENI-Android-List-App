@@ -6,93 +6,121 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="15dp">
 
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dip"
-            android:layout_marginRight="25dip"
-            android:layout_marginTop="25dip"
-            android:text="@string/pain_au_chocolat"
-            android:textStyle="bold"
-            android:textSize="20sp"
-            tools:ignore="MissingConstraints" />
-
-        <RelativeLayout
+        <ScrollView
+            android:id="@+id/scrollview_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="25dip"
-            android:layout_marginRight="25dip">
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/buttons_panel"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/_10"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                tools:ignore="MissingConstraints" />
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
 
-            <RatingBar
-                android:id="@+id/rating_bar"
-                style="?android:attr/ratingBarStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:gravity="right"
-                android:rating="3.5" />
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginRight="25dip"
+                    android:text="@string/pain_au_chocolat"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginTop="15dip"
+                    android:layout_marginRight="25dip"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/_10"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="MissingConstraints" />
+
+                    <RatingBar
+                        android:id="@+id/rating_bar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:gravity="right"
+                        android:rating="3.5" />
+                </RelativeLayout>
 
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="25dip"
-            android:layout_marginTop="5dip"
-            android:layout_marginRight="25dip"
-            android:text="@string/une_viennoiserie_au_beurre_et_au_chocolat"
-            android:textSize="12sp"
-            android:textStyle="bold"
-            tools:ignore="MissingConstraints" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dip"
+                    android:layout_marginTop="5dip"
+                    android:layout_marginRight="25dip"
+                    android:text="@string/une_viennoiserie_au_beurre_et_au_chocolat"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="MissingConstraints" />
+            </LinearLayout>
 
+        </ScrollView>
 
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/buttons_panel"
             android:layout_width="match_parent"
-            android:layout_height="0dip"
-            android:layout_weight="1"
-            android:gravity="center|bottom"
-            android:orientation="horizontal">
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scrollview_list">
 
             <ImageButton
                 android:id="@+id/button9"
-                android:layout_width="125sp"
-                android:layout_height="50sp"
+                android:layout_column="0"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintWidth_percent="0.40"
+                android:layout_marginLeft="25dip"
                 android:src="@drawable/internet"
-                android:layout_marginRight="10dip"/>
+                android:layout_marginStart="25dip" />
 
             <ToggleButton
                 android:id="@+id/button90"
-                android:layout_width="125sp"
-                android:layout_height="50sp"
+                android:layout_column="1"
+                android:layout_width="0sp"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintWidth_percent="0.40"
+                android:layout_marginRight="25dip"
                 android:textOff="@string/bought"
                 android:textOn="@string/tobuy"
-                android:layout_marginLeft="10dip"/>
-        </LinearLayout>
-    </LinearLayout>
+                android:layout_marginEnd="25dip" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
