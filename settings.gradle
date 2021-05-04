@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "TP1Module2"
+rootProject.name = "listapp"

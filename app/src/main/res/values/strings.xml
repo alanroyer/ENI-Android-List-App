@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">TP1Module2</string>
+    <string name="app_name">List App</string>
     <string name="button">Button</string>
     <string name="pain_au_chocolat">Pain au chocolat</string>
     <string name="_10">10$</string>
     <string name="une_viennoiserie_au_beurre_et_au_chocolat">Une viennoiserie au beurre et au chocolat</string>
-    <string name="bought">acheté</string>
-    <string name="tobuy">Acheter</string>
+    <string name="bought">Acheté</string>
+    <string name="tobuy">A Acheter</string>
 </resources>

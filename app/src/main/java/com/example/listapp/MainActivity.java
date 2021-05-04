@@ -1,4 +1,4 @@
-package com.example.tp1module2;
+package com.example.listapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;

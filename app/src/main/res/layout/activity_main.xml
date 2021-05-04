@@ -81,15 +81,15 @@
 
             <ImageButton
                 android:id="@+id/button9"
-                android:layout_width="100sp"
+                android:layout_width="125sp"
                 android:layout_height="50sp"
                 android:src="@drawable/internet"
                 android:layout_marginRight="10dip"/>
 
             <ToggleButton
                 android:id="@+id/button90"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="125sp"
+                android:layout_height="50sp"
                 android:textOff="@string/bought"
                 android:textOn="@string/tobuy"
                 android:layout_marginLeft="10dip"/>
