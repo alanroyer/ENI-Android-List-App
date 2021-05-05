@@ -8,29 +8,21 @@ public class Article {
     private String description;
     private Float rating;
 
+    private String url;
+    private boolean isAchete;
+
     public Article() {
-        super();
     }
 
-    public Article(int id) {
-        super();
-        this.id = id;
-    }
-
-    public Article(int id, String label, Double price, String description, Float rating) {
+    public Article(int id, String label, Double price, String description, Float rating, String url, boolean isAchete) {
         super();
         this.id = id;
         this.label = label;
         this.price = price;
         this.description = description;
         this.rating = rating;
-    }
-
-    public Article(String label, Double price, String description, Float rating) {
-        super();
-        this.label = label;
-        this.price = price;
-        this.description = description;
+        this.url = url;
+        this.isAchete = isAchete;
     }
 
     public int getId() {
@@ -72,4 +64,12 @@ public class Article {
     public void setRating(Float rating) {
         this.rating = rating;
     }
+
+    public String getUrl() { return url; }
+
+    public void setUrl(String url) { this.url = url; }
+
+    public boolean isAchete() { return isAchete; }
+
+    public void setAchete(boolean achete) { isAchete = achete; }
 }
