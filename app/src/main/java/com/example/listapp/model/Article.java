@@ -1,6 +1,8 @@
 package com.example.listapp.model;
 
-public class Article {
+import java.io.Serializable;
+
+public class Article implements Serializable {
 
     private int id;
     private String label;
@@ -9,12 +11,12 @@ public class Article {
     private Float rating;
 
     private String url;
-    private boolean isAchete;
+    private boolean isBuy;
 
     public Article() {
     }
 
-    public Article(int id, String label, Double price, String description, Float rating, String url, boolean isAchete) {
+    public Article(int id, String label, Double price, String description, Float rating, String url, boolean isBuy) {
         super();
         this.id = id;
         this.label = label;
@@ -22,7 +24,7 @@ public class Article {
         this.description = description;
         this.rating = rating;
         this.url = url;
-        this.isAchete = isAchete;
+        this.isBuy = isBuy;
     }
 
     public int getId() {
@@ -69,7 +71,20 @@ public class Article {
 
     public void setUrl(String url) { this.url = url; }
 
-    public boolean isAchete() { return isAchete; }
+    public boolean isBuy() { return isBuy; }
 
-    public void setAchete(boolean achete) { isAchete = achete; }
+    public void setBuy(boolean buy) { isBuy = buy; }
+
+    @Override
+    public String toString() {
+        return "Article{" +
+                "id=" + id +
+                ", nom='" + label + '\'' +
+                ", description='" + description + '\'' +
+                ", prix=" + price +
+                ", note=" + rating +
+                ", url='" + url + '\'' +
+                ", achat=" + isBuy +
+                '}';
+    }
 }

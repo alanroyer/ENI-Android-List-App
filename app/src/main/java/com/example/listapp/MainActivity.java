@@ -44,18 +44,21 @@ public class MainActivity extends AppCompatActivity {
         textViewPrice.setText(article.getPrice().toString() + "€");
         textViewDescription.setText(article.getDescription());
         ratingBarRating.setRating(article.getRating());
-        toggle.setChecked(article.isAchete());
+        toggle.setChecked(article.isBuy());
     }
 
     public void onClickBtnUrl(View view){
         Intent intent = new Intent(this, InfoUrlActivity.class);
+        Bundle b = new Bundle();
+        b.putSerializable("article", article);
+        intent.putExtras(b);
         startActivity(intent);
     }
 
     public void onClickBtnBuy(View view)
     {
-        article.setAchete(!article.isAchete());
-        if(article.isAchete()){
+        article.setBuy(!article.isBuy());
+        if(article.isBuy()){
             Toast.makeText(this, "Article acheté",Toast.LENGTH_SHORT).show();
             Log.i("INFO","Article acheté");
         }
