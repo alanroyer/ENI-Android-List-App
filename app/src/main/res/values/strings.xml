@@ -6,4 +6,8 @@
     <string name="une_viennoiserie_au_beurre_et_au_chocolat">Une viennoiserie au beurre et au chocolat</string>
     <string name="bought">Acheté</string>
     <string name="tobuy">A Acheter</string>
+    <string name="modifier">Modifier</string>
+    <string name="envoyer">Envoyer</string>
+    <string name="configuration">Configuration</string>
+    <string name="ajouter">Ajouter</string>
 </resources>

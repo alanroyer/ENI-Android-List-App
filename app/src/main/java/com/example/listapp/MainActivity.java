@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -17,6 +18,13 @@ import com.example.listapp.model.Article;
 public class MainActivity extends AppCompatActivity {
 
     private Article article;
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.action_bar_details,menu);
+        return true;
+    }
 
     @SuppressLint("SetTextI18n")
     @Override

@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.Menu;
 
 import com.example.listapp.adapters.ArticlesAdapter;
 import com.example.listapp.model.Article;
@@ -14,6 +15,13 @@ import java.util.ArrayList;
 public class ListeArticlesActivity extends AppCompatActivity {
 
     private ArrayList<Article> listeArticles = new ArrayList<>();
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.action_bar_liste,menu);
+        return true;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
