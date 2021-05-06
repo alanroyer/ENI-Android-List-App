@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -29,17 +30,19 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
 
     @Override
     public ArticlesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View itemArticle = inflater.inflate(R.layout.article_view, parent, false);
+        View itemArticle = inflater.inflate(R.layout.article_card, parent, false);
         ArticlesViewHolder articlesViewHolder = new ArticlesViewHolder(itemArticle,articles);
         articlesViewHolder.view = itemArticle;
-        articlesViewHolder.nom = (TextView) itemArticle.findViewById(R.id.label_article);
+        articlesViewHolder.label = (TextView) itemArticle.findViewById(R.id.article_label);
+        articlesViewHolder.rating = (RatingBar) itemArticle.findViewById(R.id.article_rating);
         return articlesViewHolder;
     }
 
     @Override
     public void onBindViewHolder(ArticlesViewHolder holder, int position) {
         Article article = articles.get(position);
-        holder.nom.setText(article.getLabel());
+        holder.label.setText(article.getLabel());
+        holder.rating.setRating(article.getRating());
     }
 
     @Override
@@ -49,7 +52,8 @@ public class ArticlesAdapter extends RecyclerView.Adapter<ArticlesAdapter.Articl
 
     public static class ArticlesViewHolder extends RecyclerView.ViewHolder {
         View view;
-        TextView nom;
+        TextView label;
+        RatingBar rating;
         public ArticlesViewHolder(View itemView, ArrayList<Article> articles) {
             super(itemView);
             this.view = itemView;
