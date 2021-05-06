@@ -24,15 +24,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        article = new Article(
-                1
-                ,"Pain au Chocolat"
-                ,10d
-                ,"Une viennoiserie au beurre et au chocolat"
-                ,3f
-                ,"http://article.com/"
-                ,false
-        );
+        Bundle b = getIntent().getExtras();
+        article = (Article) b.getSerializable("article");
 
         TextView textViewTitle = findViewById(R.id.item_title);
         TextView textViewPrice = findViewById(R.id.item_price);
