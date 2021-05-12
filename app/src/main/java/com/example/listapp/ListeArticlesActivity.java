@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.example.listapp.adapters.ArticlesAdapter;
 import com.example.listapp.model.Article;
@@ -21,6 +23,19 @@ public class ListeArticlesActivity extends AppCompatActivity {
     {
         getMenuInflater().inflate(R.menu.action_bar_liste,menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.item_configuration:
+                Intent intent = new Intent(this, ConfigurationActivity.class);
+                startActivity(intent);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     @Override
